@@ -1,27 +1,26 @@
-# SpotiappN04
+# SpotiApp
+A basic app built with Angular 11.2.9 that emulates Spotify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+## Installing
 
-## Development server
+Install needed node packages
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm install
+```
 
-## Code scaffolding
+## Needed Settings
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* You need a authorization token provided by Spotify, send a POST request (via Postman or your desire service) to https://accounts.spotify.com/api/token with the body content: ``` grant_type: client_credentials``` and the following headers: ```Authorization: Basic *<base64 encoded:client_secret>*```. More information at [Spotify for Developers](https://developer.spotify.com/documentation/general/guides/authorization-guide/).
+* Finally, copy this TEMPORAL token in getQuery function in the file of spotify.service.ts.
 
-## Build
+## Execution
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute the next command to run this app.
 
-## Running unit tests
+```
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Acknowledgments
+* This project was inspired by Fernando Herrera (Twitter: [@fernando_her85](https://twitter.com/fernando_her85)) and its online course: "Angular: De cero a experto (Legacy)"
